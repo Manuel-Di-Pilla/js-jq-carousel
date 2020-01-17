@@ -15,6 +15,18 @@ $(document).ready(
   }
 )
 
+$(document).keydown(
+  function () {
+    if (event.keyCode == 39) {
+      next();
+      nextCircle();
+    } else if (event.keyCode == 37) {
+      prev();
+      prevCircle();
+    }
+  }
+)
+
 function next() {
   var first = $('img.first');
   var last = $('img.last');
