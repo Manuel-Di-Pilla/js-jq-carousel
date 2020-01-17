@@ -12,6 +12,12 @@ $(document).ready(
         prevCircle();
       }
     )
+    $('i').click(
+      function () {
+        $('i.active').removeClass('active');
+        $(this).addClass('active');
+      }
+    )
   }
 )
 
@@ -77,5 +83,12 @@ function prevCircle () {
   } else {
     active.removeClass('active');
     prevCircle.addClass('active');
+  }
+}
+function clickCircle() {
+  var circle = $('i');
+  var active = $('i.active');
+  if (circle.hasClass('active') == false) {
+    circle.addClass('active');
   }
 }
