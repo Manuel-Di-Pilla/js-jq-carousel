@@ -34,6 +34,22 @@ $(document).ready(
     )
   }
 )
+$(function () {
+  var interval;
+  function startSlider() {
+    interval = setInterval(function () {
+      slider();
+    }, 4000);
+  }
+  function stopSlider() {
+    clearInterval(interval)
+  }
+  $('.images').on('mouseenter', stopSlider);
+  $('.images').on('mouseleave', startSlider );
+  $('i').on('mouseenter', stopSlider);
+  $('i').on('mouseleave', startSlider);
+  startSlider();
+})
 
 $(document).keydown(
   function () {
@@ -43,6 +59,24 @@ $(document).keydown(
     } else if (event.keyCode == 37) {
       prev();
       prevCircle();
+    }
+  }
+)
+$(document).keydown(
+  function () {
+    if (event.keyCode == 39) {
+      stopSlider();
+    } else if (event.keyCode == 37) {
+      stopSlider();
+    }
+  }
+)
+$(document).keyup(
+  function () {
+    if (event.keyCode == 39) {
+      startSlider();
+    } else if (event.keyCode == 37) {
+      startSlider();
     }
   }
 )
@@ -137,5 +171,42 @@ function clickCircleLast() {
     $('i').removeClass('active');
     last.addClass('active');
     imgLast.addClass('active');
+  }
+}
+
+function slider() {
+  var img1 = $('img.first');
+  var img1Next = img1.next();
+  var img2 = $('img.second');
+  var img2Next = img2.next();
+  var img3 = $('img.third');
+  var img3Next = img3.next();
+  var img4 = $('img.last');
+  var img4Next = img4.next();
+  var circle1 = $('i.first');
+  var circle2 = $('i.second');
+  var circle3 = $('i.third');
+  var circle4 = $('i.last');
+
+  if (img1.hasClass('active') == true) {
+    img1.removeClass('active');
+    img1Next.addClass('active');
+    circle1.removeClass('active');
+    circle2.addClass('active');
+  } else if (img2.hasClass('active') == true) {
+    img2.removeClass('active');
+    img2Next.addClass('active');
+    circle2.removeClass('active');
+    circle3.addClass('active');
+  } else if (img3.hasClass('active') == true) {
+    img3.removeClass('active');
+    img3Next.addClass('active');
+    circle3.removeClass('active');
+    circle4.addClass('active');
+  } else if (img4.hasClass('active') == true) {
+    img4.removeClass('active');
+    img1.addClass('active');
+    circle4.removeClass('active');
+    circle1.addClass('active');
   }
 }
