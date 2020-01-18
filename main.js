@@ -12,10 +12,24 @@ $(document).ready(
         prevCircle();
       }
     )
-    $('i').click(
+    $('i.first').click(
       function () {
-        $('i.active').removeClass('active');
-        $(this).addClass('active');
+        clickCircleFirst();
+      }
+    )
+    $('i.second').click(
+      function () {
+        clickCircleSecond();
+      }
+    )
+    $('i.third').click(
+      function () {
+        clickCircleThird();
+      }
+    )
+    $('i.last').click(
+      function () {
+        clickCircleLast();
       }
     )
   }
@@ -85,10 +99,43 @@ function prevCircle () {
     prevCircle.addClass('active');
   }
 }
-function clickCircle() {
-  var circle = $('i');
-  var active = $('i.active');
-  if (circle.hasClass('active') == false) {
-    circle.addClass('active');
+function clickCircleFirst() {
+  var first = $('i.first');
+  var imgFirst = $('img.first')
+  if (first.hasClass('active') == false) {
+    $('img').removeClass('active');
+    $('i').removeClass('active');
+    first.addClass('active');
+    imgFirst.addClass('active');
+  }
+}
+function clickCircleSecond() {
+  var second = $('i.second');
+  var imgSecond = $('img.second')
+  if (second.hasClass('active') == false) {
+    $('img').removeClass('active');
+    $('i').removeClass('active');
+    second.addClass('active');
+    imgSecond.addClass('active');
+  }
+}
+function clickCircleThird() {
+  var third = $('i.third');
+  var imgThird = $('img.third')
+  if (third.hasClass('active') == false) {
+    $('img').removeClass('active');
+    $('i').removeClass('active');
+    third.addClass('active');
+    imgThird.addClass('active');
+  }
+}
+function clickCircleLast() {
+  var last = $('i.last');
+  var imgLast = $('img.last')
+  if (last.hasClass('active') == false) {
+    $('img').removeClass('active');
+    $('i').removeClass('active');
+    last.addClass('active');
+    imgLast.addClass('active');
   }
 }
