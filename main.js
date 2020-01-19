@@ -39,7 +39,7 @@ $(function () {
   function startSlider() {
     interval = setInterval(function () {
       slider();
-    }, 4000);
+    }, 3000);
   }
   function stopSlider() {
     clearInterval(interval)
@@ -135,7 +135,7 @@ function prevCircle () {
 }
 function clickCircleFirst() {
   var first = $('i.first');
-  var imgFirst = $('img.first')
+  var imgFirst = $('img.first');
   if (first.hasClass('active') == false) {
     $('img').removeClass('active');
     $('i').removeClass('active');
@@ -155,7 +155,7 @@ function clickCircleSecond() {
 }
 function clickCircleThird() {
   var third = $('i.third');
-  var imgThird = $('img.third')
+  var imgThird = $('img.third');
   if (third.hasClass('active') == false) {
     $('img').removeClass('active');
     $('i').removeClass('active');
@@ -165,7 +165,7 @@ function clickCircleThird() {
 }
 function clickCircleLast() {
   var last = $('i.last');
-  var imgLast = $('img.last')
+  var imgLast = $('img.last');
   if (last.hasClass('active') == false) {
     $('img').removeClass('active');
     $('i').removeClass('active');
